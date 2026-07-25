@@ -7,7 +7,7 @@ def saves(i):
     f1.write(i)
     f1.close()
 
-print("\033c\033[47;31m\ngive me the .java file to open ? \n")
+print("\033c\033[47;30m\ngive me the .java file to open ? \n")
 a=input().strip()
 #a="Hello.java"
 b=a.find(".")
@@ -16,7 +16,7 @@ xzz=a
 if b>-1:
     c=a[:b]+".class"
     xzz=a[:b]+".jbin"
-os.system("javac --release 25 "+a)
+os.system("javac --release 21 "+a)
 os.system("javap -c -private "+c+" >/tmp/output.txt")
 f1=open("/tmp/output.txt","r")
 aa=f1.read()
